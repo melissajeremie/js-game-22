@@ -1,4 +1,4 @@
-// document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     // array of cards
     const cardArray = [
         {
@@ -52,35 +52,56 @@
     ]
 
 // game board
-//const grid = document.querySelector('.grid');
+const grid = document.querySelector('.grid');
+const result = document.getElementById('result')
+let cardsChosen = []
+let cardsChosenId = []
+let cardsWon = []
 
-// function createBoard() {
-//     for (let i = 0; i < cardArray.length; i++) {
-//         let card = document.createElement('img')
-//         card.setAttribute('src', 'images/cardback.png')
-//         card.setAttribute('data-id', i)
-//         // card.addEventListener('click', flipcard)
-//         grid.appendChild(card)
+function createBoard() {
+    for (let i = 0; i < cardArray.length; i++) {
+        let card = document.createElement('img')
+        card.setAttribute('src', 'images/cardback.png')
+        card.setAttribute('data-id', i)
+        card.addEventListener('click', flipCard)
+        grid.appendChild(card)
         
-//     }
-// }
-// createBoard()
-//})
-
-function pickNums(n){
-    let winners = []
-    for(let i=0; i<n; i++){
-        winners.push(Math.ceil(Math.random()*71))
     }
-    return `Your winning numbers are ${winners} and MegaBall ` + Math.floor(Math.random()*25)
 }
-// console.log(pickNums(5))
-
-function pickC4L(n){
-    let c4lwinners = []
-        for(let i=0; i<n; i++){
-            c4lwinners.push(Math.ceil(Math.random()*61))
-        }
-        return `Your winning numbers are ${c4lwinners} and ` + Math.floor(Math.random()*4)
+// check for card matches
+function checkForMatch(){
+    let cards = document.querySelectorAll('img')
+    const optionOneId = cardsChosen[0]
+    const optionTwoId = cardsChosen[1]
+    if (cardsChosen[0] === cardsChosen[1]){
+        alert("It\'s a match!")
+        cards[optionOneId].setAttribute('src', 'images/black.png')
+        cards[optionTwoId].setAttribute('src', 'images/black.png')
+        cardsWon.push(cardsChosen)
+    } else {
+       cards[optionOneId].setAttribute('src', 'images/cardback.png') 
+       cards[optionTwoId].setAttribute('src', 'images/cardback.png') 
+       alert("Try again")
     }
-console.log(pickC4L(5))
+    cardsChosen = []
+    cardsChosenId = []
+    result.textContent = cardsWon.length
+    if(cardsWon.length === cardArray/2) {
+        result.textContent = "You found all the matches :)"
+    }
+}
+
+// flip card over
+function flipCard(){
+let cardId = this.getAttribute('data-id')
+cardsChosen.push(cardArray[cardId].name)
+cardsChosenId.push(cardId)
+this.setAttribute('src', cardArray[cardId].img)
+if (cardsChosen.length === 2){
+    setTimeout(checkForMatch, 500)
+}
+}
+
+createBoard()
+})
+
