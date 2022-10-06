@@ -12,3 +12,15 @@ body {
     font-size: 5em;
     color: #f3e4e4;
 }
+
+.page-subtitle {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 2em;
+    color: #bba83d;
+}
+
+.game-info {
+    font-family: 'Rock Salt', sans-serif;
+    font-size: 1em;
+    color: #9e8698;
+}
