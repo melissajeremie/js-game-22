@@ -1,6 +1,14 @@
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-    height: 300px;
-    width: 400px;
+html {
+    min-height: 100vh;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(#080B3A, #8E839C);
+}
+
+.page-title {
+    font-family: 'Splash', sans-serif;
+    font-size: 5em;
+    color: #f3e4e4;
 }
