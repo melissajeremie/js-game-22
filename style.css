@@ -24,19 +24,17 @@ body {
 }
 
 .game-container {
-    width: 75vw;
     margin: auto;
-    border: 2px solid hotpink;
+    /* border: 2px solid hotpink; */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .game-info-container {
-    width: 55%;
-    display: flex;
+    width: 50%;
     margin: auto;
-    border: 2px dotted white;
+    display: flex;
+    /* border: 2px dotted white; */
     justify-content: space-around;
 
 }
@@ -45,19 +43,21 @@ body {
     font-family: 'Rock Salt', sans-serif;
     font-size: 1em;
     color: #9e8698;
-    width: 35%;
-    border: 1px dashed lightgreen;
+    width: 25%;
+    /* border: 1px dashed lightgreen; */
 }
 
 .card-container {
+    margin: auto;
     display: grid;
-    grid-template-columns: 12% 12% 12% 12%;
+    grid-template-columns: 26% 26% 26% 25%;
     grid-template-rows: 25% 25% 25% 25%;
+    
 }
 
 .card {
-    height: 8em;
-    width: 7em;
+    height: 9em;
+    width: 8em;
     border: 2px solid black;
-    margin: 2%;
+    margin: 3%;
 }
