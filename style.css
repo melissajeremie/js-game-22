@@ -3,7 +3,6 @@ html {
 }
 
 body {
-    margin: 0;
     background: linear-gradient(#080B3A, #8E839C);
 }
 
@@ -11,16 +10,54 @@ body {
     font-family: 'Splash', sans-serif;
     font-size: 5em;
     color: #f3e4e4;
+    margin-bottom: 0;
+    text-align: center;
 }
 
 .page-subtitle {
     font-family: 'Julius Sans One', sans-serif;
     font-size: 2em;
     color: #bba83d;
+    text-align: center;
+    padding: 0;
+    margin-top: 0;
+}
+
+.game-container {
+    width: 75vw;
+    margin: auto;
+    border: 2px solid hotpink;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.game-info-container {
+    width: 55%;
+    display: flex;
+    margin: auto;
+    border: 2px dotted white;
+    justify-content: space-around;
+
 }
 
 .game-info {
     font-family: 'Rock Salt', sans-serif;
     font-size: 1em;
     color: #9e8698;
+    width: 35%;
+    border: 1px dashed lightgreen;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: 12% 12% 12% 12%;
+    grid-template-rows: 25% 25% 25% 25%;
+}
+
+.card {
+    height: 8em;
+    width: 7em;
+    border: 2px solid black;
+    margin: 2%;
 }
