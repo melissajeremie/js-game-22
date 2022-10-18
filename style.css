@@ -50,14 +50,13 @@ body {
 .card-container {
     margin: auto;
     display: grid;
-    grid-template-columns: 26% 26% 26% 25%;
-    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
     
 }
 
 .card {
-    height: 9em;
-    width: 8em;
-    border: 2px solid black;
-    margin: 3%;
+    height: 175px;
+    width: 125px;
+    background-color: black;
 }
